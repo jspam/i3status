@@ -37,13 +37,13 @@
 #define CFG_CUSTOM_ALIGN_OPT \
     CFG_STR_CB("align", NULL, CFGF_NONE, parse_align)
 
-#define CFG_COLOR_OPTS(good, degraded, bad)             \
-    CFG_STR("color_good", good, CFGF_NONE)              \
-    ,                                                   \
-        CFG_STR("color_degraded", degraded, CFGF_NONE), \
-        CFG_STR("color_bad", bad, CFGF_NONE)
+#define CFG_COLOR_OPTS(good, degraded, bad, neutral)    \
+    CFG_STR("color_good", good, CFGF_NONE),             \
+    CFG_STR("color_degraded", degraded, CFGF_NONE),     \
+    CFG_STR("color_bad", bad, CFGF_NONE),               \
+    CFG_STR("color_neutral", neutral, CFGF_NONE)
 
-#define CFG_CUSTOM_COLOR_OPTS CFG_COLOR_OPTS(NULL, NULL, NULL)
+#define CFG_CUSTOM_COLOR_OPTS CFG_COLOR_OPTS(NULL, NULL, NULL, NULL)
 
 #define CFG_CUSTOM_MIN_WIDTH_OPT \
     CFG_PTR_CB("min_width", NULL, CFGF_NONE, parse_min_width, free)
@@ -254,7 +254,7 @@ int main(int argc, char *argv[]) {
         CFG_STR("separator", "default", CFGF_NONE),
         CFG_STR("color_separator", "#333333", CFGF_NONE),
         CFG_INT("interval", 1, CFGF_NONE),
-        CFG_COLOR_OPTS("#00FF00", "#FFFF00", "#FF0000"),
+        CFG_COLOR_OPTS("#00FF00", "#FFFF00", "#FF0000", "#AAAAAA"),
         CFG_STR("markup", "none", CFGF_NONE),
         CFG_END()};
 
