@@ -522,7 +522,7 @@ void print_wireless_info(yajl_gen json_gen, char *buffer, const char *interface,
     bool prefer_ipv4 = true;
     if (ipv4_address == NULL) {
         if (ipv6_address == NULL) {
-            START_COLOR("color_bad");
+            START_COLOR("color_neutral");
             outwalk += sprintf(outwalk, "%s", format_down);
 
             END_COLOR;
@@ -540,7 +540,7 @@ void print_wireless_info(yajl_gen json_gen, char *buffer, const char *interface,
     const char *ip_address = (prefer_ipv4) ? ipv4_address : ipv6_address;
     if (!get_wireless_info(interface, &info)) {
         walk = format_down;
-        START_COLOR("color_bad");
+        START_COLOR("color_neutral");
     } else {
         walk = format_up;
         if (info.flags & WIRELESS_INFO_FLAG_HAS_QUALITY)

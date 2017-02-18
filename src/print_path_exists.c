@@ -24,7 +24,7 @@ void print_path_exists(yajl_gen json_gen, char *buffer, const char *title, const
 
     INSTANCE(path);
 
-    START_COLOR((exists ? "color_good" : "color_bad"));
+    START_COLOR((exists ? "color_good" : "color_neutral"));
 
     char string_status[STRING_SIZE];
 

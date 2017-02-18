@@ -122,7 +122,7 @@ void print_ipv6_info(yajl_gen json_gen, char *buffer, const char *format_up, con
     char *outwalk = buffer;
 
     if (addr_string == NULL) {
-        START_COLOR("color_bad");
+        START_COLOR("color_neutral");
         outwalk += sprintf(outwalk, "%s", format_down);
         END_COLOR;
         OUTPUT_FULL_TEXT(buffer);

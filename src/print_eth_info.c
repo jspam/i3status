@@ -161,7 +161,7 @@ void print_eth_info(yajl_gen json_gen, char *buffer, const char *interface, cons
     bool prefer_ipv4 = true;
     if (ipv4_address == NULL) {
         if (ipv6_address == NULL) {
-            START_COLOR("color_bad");
+            START_COLOR("color_neutral");
             goto out;
         } else {
             prefer_ipv4 = false;
