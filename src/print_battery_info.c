@@ -653,6 +653,9 @@ void print_battery_info(yajl_gen json_gen, char *buffer, int number, const char 
         } else if (batt_info.seconds_remaining >= 0 && strcasecmp(threshold_type, "time") == 0 && batt_info.seconds_remaining < 60 * low_threshold) {
             START_COLOR("color_bad");
             colorful_output = true;
+        } else {
+            START_COLOR("color_degraded");
+            colorful_output = true;
         }
     }
 
